@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ SITENAME }} - {{ SITETAG }}
+{%endblock%}
+
+{% block content %}
+<section id="content">
+{% block content_title %}
+<h2>Latest entries</h2>
+{% endblock %}
+
+{% for article in articles_page.object_list %}
+    
+    {% include 'entry_metadata.html' %}
+    
+    <article class="hentry">
+            <header> <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1> </header>
+            <div class="entry-content"> {{ article.summary }} </div>
+    </article>
+    
+    <p class="read-more"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Hyperlink to {{ article.title|striptags }}">Read More&nbsp;&raquo;</a></p>
+    <hr>
+    
+{% endfor %}
+
+{% include 'pagination.html' %}
+</section><!-- /#content -->
+{% endblock content %}

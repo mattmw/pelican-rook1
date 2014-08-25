@@ -1,0 +1,609 @@
+@import url("pygment.css");
+
+@font-face
+{
+	font-family: SourceSansProBold;
+    src: url('../fonts/SourceSansPro-Bold.otf');
+}
+
+@font-face
+{
+	font-family: SourceSansProSemibold;
+    src: url('../fonts/SourceSansPro-Semibold.otf');
+}
+
+@font-face
+{
+	font-family: SourceSansProLight;
+	src: url('../fonts/SourceSansPro-Light.otf');
+}
+
+@font-face
+{
+	font-family: SourceSansProRegular;
+	src: url('../fonts/SourceSansPro-Regular.otf');
+}
+
+/* Possible hack: ensure left sidebar reaches the foot of the page. */
+body, html
+{
+    /* height: 100%; */
+}
+
+body
+{
+    margin: 0em 0em 0em 0em;
+    background: url('../images/cloudbg1280_top.png') repeat-x, url('../images/card_bg_blur1_lightergrey.png');
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+/*
+a.menu1:link {text-decoration: none; color: #FFF8F3;}
+a.menu1:visited {text-decoration: none; color: #FFF8F3;}
+a.menu1:hover {text-decoration: none; color: rgb(219,225,43);}
+
+a.submenu1:link {text-decoration: none; color: #cac4be;}
+a.submenu1:visited {text-decoration: none; color: #cac4be;}
+a.submenu1:hover {text-decoration: none; color: #ebe2da;}
+
+div.menublock {position: relative;}
+*/
+
+a.menuitem:link {text-decoration: none; color: #f8f8f8;}
+a.menuitem:visited {text-decoration: none; color: #f8f8f8;}
+a.menuitem:hover {text-decoration: none; color: #e13f3f;}
+
+a.menuitem.active:link {text-decoration: none; color: #f8f8f8;}
+a.menuitem.active:visited {text-decoration: none; color: #f8f8f8;}
+a.menuitem.active:hover {text-decoration: none; color: #f8f8f8;}
+
+a.submenuitem:link {text-decoration: none; color: #f3f3f3;}
+a.submenuitem:visited {text-decoration: none; color: #f3f3f3;}
+a.submenuitem:hover {text-decoration: none; color: #fff;}
+
+a.submenuitem.active:link {text-decoration: none; color: #f8f8f8;}
+a.submenuitem.active:visited {text-decoration: none; color: #f8f8f8;}
+a.submenuitem.active:hover {text-decoration: none; color: #f8f8f8;}
+
+img
+{
+    margin: 0em 0em 0em 0em;
+}
+
+img#mascot
+{
+    margin: .2rem .2rem .2rem .2rem;
+}
+
+img#mascothead
+{
+    margin-top: -0.50rem;
+}
+
+p
+{
+    margin: 0.75rem 0.75rem 0.75rem 1.25rem;
+    clear: left;
+}
+
+h1, h2, h3
+{
+    margin: 1rem 0rem 0rem 1rem;
+}
+
+h1
+{
+    font-size: 18pt;
+    font-weight: normal;
+}
+
+h2
+{
+    font-size: 14pt;
+    font-weight: normal;
+    margin-left: 1.75rem;
+}
+
+h3
+{
+    font-size: 10pt;
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 2.5rem;
+}
+
+hr
+{
+    clear: left;
+    margin: 0rem 1rem 0rem 1rem;
+    color: #eee;
+}
+
+p#left
+{
+    margin-top: 0rem;
+}
+
+p.nav
+{
+    margin: 0em 0em 0em 0em;
+    padding: 1em 1em 1em 1em;
+}
+
+p.right
+{
+    margin: 1em 1em 1em 1em;
+}
+
+p.read-more
+{
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*
+p.nameplate
+{
+    margin: 1.25rem 0.5rem 1.15rem 0.5rem;
+}
+*/
+
+p.nameplate
+{
+    margin: 0.50rem 0.5rem 0.75rem 0.5rem;
+}
+
+p#name
+{
+    /* font-size: 12pt; */
+    text-align: center;
+}
+
+div.location
+{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 0rem;
+    text-align: right;
+    font-size: 8pt;
+    font-style: italic;
+    color: grey;
+    float: right;
+    /* background: url('../images/card_bg_blur1_lightergrey.png'); */
+}
+
+div.entry-metadata
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0rem;
+    text-align: right;
+    width: 120px;
+    font-size: 8pt;
+    font-style: italic;
+    color: grey;
+    float: right;
+    /* background: url('../images/card_bg_blur1_lightergrey.png'); */
+}
+
+p.entry-metadata
+{
+    margin: 0.25rem 0rem 0rem 0rem;
+    text-align: right;
+}
+
+li.sidebar
+{
+    list-style-type: none;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    font-size: 8pt;
+    font-style: italic;
+    color: grey;
+    margin-left: 1.15rem;
+}
+
+.sidebar
+{
+    margin: 0.75rem 0.75rem 0.5rem 0.75rem;
+}
+
+p.sidebar
+{
+    /* margin-left: 1.15rem; */
+    margin-right: 0.25rem;
+    color: grey;
+}
+
+h1.sidebar
+{
+    font-size: 12pt;
+    font-family: SourceSansProSemibold, sans;
+}
+
+p.sidebar.description
+{
+    font-size: 8pt;
+    margin-top: -0.75rem;
+}
+
+a.personal-links
+{
+    font-family: SourceSansProSemibold, sans;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+img.entry-icon
+{
+}
+
+div.location.back
+{
+    float: none;
+}
+
+div.location.polaroid
+{
+    /* margin-bottom: 0.5rem; */
+}
+
+div.back-button
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0.0rem;
+    text-align: left;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: bold;
+    color: grey;
+    float: left;
+}
+
+/* Enable for location-bar minimalism, but at the loss of usability. */
+/*
+a.back-button:link {text-decoration: none; color: grey;}
+a.back-button:visited {text-decoration: none; color: grey;}
+a.back-button:hover {text-decoration: underline; color: grey;}
+
+a.location-bar:link {text-decoration: none; color: grey;}
+a.location-bar:visited {text-decoration: none; color: grey;}
+a.location-bar:hover {text-decoration: none; color: grey;}
+*/
+
+span.location-active
+{
+    font-weight: bold;
+}
+
+p#nameplate-leader
+{
+    font-family: SourceSansProRegular, sans-serif;
+    font-size: 32pt;
+    font-weight: normal;
+    text-align: center;
+    color: #eee;
+    letter-spacing: 0.25rem;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+p#nameplate-trailer
+{
+    font-family: serif;
+    font-style: italic;
+    margin-top: -1.00rem;
+    text-align: center;
+    color: #ccc;
+}
+
+/* div#submenu {position: relative; margin-top: 10px; text-align: center; font-size: 12pt; color: #cac4be}*/
+
+div#left
+{
+    position: absolute;
+    z-index: -1;
+    float: none;
+    width: 20%;
+    font-size: 11pt;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div#header
+{
+    background: url('../images/card_bg_blur1_darkishgrey.png');
+    color: #fff;
+    width: 60%;
+    /* margin-top: 0.5rem; */
+    margin-left: 20%;
+    /*padding-top: 0.5rem;
+    padding-bottom: 0.5rem;*/
+    float: left;
+    /* border-right: 1px solid #bbb; */
+    /* border-left: 1px solid #bbb; */
+}
+
+div#nav
+{
+    background: url('../images/card_bg_blur1_midgrey.png');
+    color: #fff;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    float: left;
+    width: 60%;
+    font-size: 12pt;
+    margin-left: 20%;
+    /* border-right: 1px solid #bbb; */
+    /* border-left: 1px solid #bbb; */
+}
+
+div.menuitem
+{
+    /* position: relative; */
+    display: inline;
+    margin: 0em 0em 0em 0em;
+    padding: 6px 0.5em 18px 0.5em;
+    text-align: center;
+    font-family: SourceSansProBold, sans-serif;
+    font-weight: normal;
+    /* border: 1px solid black; */
+    color: #f8f8f8;
+    text-shadow: #333 0px 2px 0px;
+}
+
+div.menuitem.active
+{
+    position: relative;
+    z-index: 1;
+    background: #800000;
+    background:
+        url('../images/ribbon_upper.png') left top repeat-x,
+        url('../images/ribbon_lower.png') center bottom;
+    color: #FFF8F3;
+    text-shadow: #FFF8F3 0px 0px 10px;
+}
+
+div.menuitem.active-noarrow
+{
+    position: relative;
+    z-index: 1;
+    background: #800000;
+    background:
+        url('../images/ribbon_upper.png') left top repeat-x,
+        url('../images/ribbon_lower_noarrow.png') center bottom;
+    color: #FFF8F3;
+    text-shadow: #FFF8F3 0px 0px 10px;
+}
+
+div#submenu
+{
+    /* background: url('./card_bg_blur1_lightishgrey.png'); */
+    background: #868686;
+    background:
+        url('../images/subribbon_upper.png') left top repeat-x,
+        url('../images/subribbon_lower_inset_bar.png') left bottom repeat-x,
+        #868686;
+    color: #f8f8f8;
+    float: left;
+    font-family: SourceSansProSemibold, sans-serif;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    font-size: 12pt;
+    font-weight: normal;
+    /* word-spacing: 0.75em; */
+    /* text-shadow: #000 1px 1px 0px; */
+    /* border-right: 1px solid #bbb; */
+    /* border-left: 1px solid #bbb; */
+}
+
+div.submenuitem
+{
+    display: inline;
+    margin: 0em 0em 0em 0em;
+    padding: 3px 0.3em 14px 0.3em;
+    text-align: center;
+}
+
+div.submenuitem.active
+{
+    position: relative;
+    z-index: 0;
+    background: #868686;
+    background:
+        url('../images/subribbon_upper.png') left top repeat-x,
+        url('../images/subribbon_lower_inset.png') center bottom;
+    text-shadow: #FFF8F3 0px 0px 10px;
+}
+
+div#main
+{
+    /* background-color: #555555; */
+    background: url('../images/card_bg_blur1_mottledpaper.png');
+    float: left;
+    margin-left: 20%;
+    width: 60%;
+    overflow: hidden;
+    /* border-right: 1px solid #bbb; */
+    /* border-left: 1px solid #bbb; */
+    /* border-bottom: 1px solid #bbb; */
+}
+
+div#footer
+{
+    float: left;
+    margin-left: 20%;
+    width: 60%;
+    text-align: center;
+    font-size: 8pt;
+    font-style: normal;
+}
+
+div#right
+{
+    background: url('../images/sidebar_bg.png') repeat-x;
+    /* max-width: 10em; */
+    float: right;
+    width: 18%;
+    margin-right: 1%;
+    /* border: 1px solid #bbb; */
+}
+
+div#siteicon
+{
+    /* float: left; */
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+div#nameplate
+{
+    /* text-align: center; */
+}
+
+/* Figures */
+
+div.figure.thumb
+{
+    background: #ffffff;
+    border: 1px solid DarkGray;
+    box-shadow: 1px 2px 0px lightgray;
+    margin: 3px;
+    padding: 6px;
+    height: 153px;
+    width: 130px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+div.figure.article
+{
+    background: #ffffff;
+    text-align: center;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    float: left;
+    border: 1px solid DarkGray;
+    box-shadow: 1px 2px 0px lightgray;
+}
+
+div.figure.article img
+{
+    width: 100%;
+}
+
+div.figure.article
+{
+    font-size: 10pt;
+    font-family: serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+p.caption
+{
+    margin: -2px;
+}
+
+img.thumb
+{
+    margin: 0;
+}
+
+/* Polaroid */
+div#polaroid
+{
+    background: #ffffff;
+    text-align: left;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    float: left;
+    border: 1px solid DarkGray;
+    box-shadow: 1px 2px 0px lightgray;
+}
+
+div#polaroid img
+{
+    width: 100%;
+}
+
+div#polaroid h2
+{
+    margin: 0rem 0rem 0rem 0rem;
+    /* font-family: 'Courier 10 Pitch', 'Courier New', sans; */
+    font-size: 12pt;
+    font-family: serif;
+    font-style: italic;
+    text-align: center;
+}
+
+div#polaroid p
+{
+    font-size: 10pt;
+    margin: 0rem 0rem 0rem 0rem;
+    /* font-family: 'Courier 10 Pitch', 'Courier New', sans; */
+    font-family: serif;
+    font-style: italic;
+}
+
+span.ticker
+{
+    /* background-color: black; */
+    /* text-transform: uppercase; */
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Paginator */
+
+p.paginator
+{
+    text-align: center;
+}
+
+p.paginator .older
+{
+    text-align: left;
+}
+
+/* Code Highlighting */
+
+pre{
+    background: url('../images/card_bg_blur1_brightbeige.png');
+    padding: 0.35rem;
+    color: #000;
+    margin-left: 2.25rem;
+    margin-right: 0.75rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    border: 1px solid DarkGray;
+    box-shadow: 1px 2px 0px lightgray;
+    font-size: 10pt;
+}
+
+span.lineno
+{
+    color: darkgrey;
+    font-style: italic;
+}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ SITENAME }} - {{ page.title }}
+{%endblock%}
+{% block content %}
+    
+    {% if page.submenucat %}
+    
+        {% if page.title == page.submenucat %} {# Selected submenu page #}
+            <div class="location"><span class="location-active"><a class="location-bar" href="/pages/{{ page.slug }}">{{ page.title }}</a></span> &lt; {{ page.menucat }}</div>
+        {% else %} {# Invisible submenu page. #}
+            <div class="back-button">
+                <a class="back-button" href="/pages/{{ page.submenuslug }}/">
+                    back
+                </a>
+            </div>
+            <div class="location back"><span class="location-active"><a class="location-bar" href="/pages/{{ page.slug }}">{{ page.title }}</a></span> &lt; <a class="location-bar" href="/pages/{{ page.submenuslug }}">{{ page.submenucat }}</a> &lt; {{ page.menucat }}</div>
+        {% endif %}
+    {% else %}
+        {% if page.title != page.menucat %}
+        <div class="back-button">
+            <a class="back-button" href="/pages/{{ page.menuslug }}/">
+                back
+            </a>
+        </div>
+        <div class="location back"><span class="location-active"><a class="location-bar" href="/pages/{{ page.slug }}">{{ page.title }}</a></span> &lt; <a class="location-bar" href="/pages/{{ page.menuslug }}">{{ page.menucat }}</a></div>
+        {% endif %}
+    {% endif %}
+    
+    <!-- h1>{{ page.title }}</h1 -->
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(page) }}
+
+    {{ page.content }}
+
+	{% if page.modified %}
+		<p>
+		Last updated: {{ page.modified }}
+		</p>
+	{% endif %}
+{% endblock %}

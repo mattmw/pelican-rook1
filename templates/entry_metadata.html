@@ -1,0 +1,37 @@
+{# Entry metadata #}
+    <div class="entry-metadata">
+        {# Entry icon #}
+            <img class="entry-icon" src="{{ SITEURL }}{% if article.icon %}{{ article.icon }}{% else %}/theme/images/sundog120.png{% endif %}">
+        
+        {% if article.author %}
+            <p class="entry-metadata">By: <a class="location-bar" href="{{ SITEURL }}/pages/contact">{{ article.author }}</a></p>
+        {% endif %}
+        
+        {% set year = article.date.strftime('%Y') %}
+        {% set month = article.date.strftime('%b') %}
+        {% set day = article.date.strftime('%d') %}
+        {% set time = article.date.strftime('%I:%M %p') %}
+        <p class="entry-metadata">
+            <a class="location-bar" href="{{ SITEURL }}/blog/{{year}}">{{year}}</a>/<a class="location-bar" href="{{ SITEURL }}/blog/{{year}}/{{month}}">{{month}}</a>/<a class="location-bar" href="{{ SITEURL }}/blog/{{year}}/{{month}}/{{day}}">{{day}}</a>
+        </p>
+        
+        <p class="entry-metadata">
+            {{time}}
+        </p>
+        
+        <p class="entry-metadata">
+            Tags:
+        {% for tag in article.tags|sort %}
+            <a class="location-bar" href="{{ SITEURL }}/{{tag.url}}">{{ tag }}</a>{% if tag != article.tags[-1] %},{% endif %}
+        {% endfor %}
+        </p>
+        
+        {% if article.modified %}
+        {# This part is broken until dateutil can be imported. #}
+            
+            <p class="entry-metadata">
+                Modified: {{ article.modified }}
+            </p>
+            
+        {% endif %}
+    </div>

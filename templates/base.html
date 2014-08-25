@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Desc.">
+        <meta name="copyright" content="{{ AUTHOR }}">
+        <meta name="author" content="{{ AUTHOR }}">
+        
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}">
+
+        <!-- script src="menu.js" -->
+
+        <title>
+            {% block title %}{{ SITENAME }}{%endblock%}
+        </title>
+    </head>
+
+    <body>
+       
+        <div id="left">
+            <div id="siteicon">
+                <div>
+                    <img id="logo" src="{{ SITEURL }}/images/theme/logo.png">
+                </div>
+                <div>
+                    <img id="mascothead" src="{{ SITEURL }}/images/theme/mascot.png">
+                </div>
+            </div>
+            </div>
+
+        <div id="header">
+            <div id="nameplate">
+                <p class="nameplate" id="nameplate-leader">{{ AUTHORNAME }}</p>
+                <p class="nameplate" id="nameplate-trailer">Programming blog and portfolio</p>
+            </div>
+        </div>
+
+        <!-- div id="nav">
+            <div class="menuitem">
+                <a class="menuitem" href="">CV</a></div>
+            <div class="menuitem">
+                <a class="menuitem" href="">Portfolio</a></div>
+            <div class="menuitem">
+                <a class="menuitem" href="">Blog</a></div>
+            <div class="menuitem active-noarrow">
+                <a class="menuitem active" href="">Gallery</a></div>
+            <div class="menuitem">
+                <a class="menuitem" href="">Writing</a></div>
+            <div class="menuitem">
+                <a class="menuitem" href="">Contact</a></div>
+        </div -->
+        
+        <div id="nav">
+            {# Main menu #}
+            {% for title, link in MENUITEMS %}
+                
+                {% if page %}
+                        <div {% if page.menucat == title %}{% if page.submenucat and  page.menucat in SUBMENUITEMS %}class="menuitem active-noarrow"{% else %}class="menuitem active"{% endif %}{% else %}class="menuitem"{% endif %}>
+                            <a {% if page.menucat == title %}class="menuitem active"{% else %}class="menuitem"{% endif %} href="{{ SITEURL }}/{{ link }}">{{ title }}</a></div>
+                        
+                {% else %}
+                    {% if title == 'Blog' %}
+                        <div class="menuitem active">
+                            <a class="menuitem active" href="{{ SITEURL }}/{{ link }}">{{ title }}</a></div>
+                    {% else %}
+                        <div class="menuitem">
+                            <a class="menuitem" href="{{ SITEURL }}/{{ link }}">{{ title }}</a></div>
+                    {% endif %}
+                {% endif %}
+                
+            {% endfor %}
+
+        </div>
+
+        <!-- div id="submenu">
+            <div class="submenuitem">
+            <a class="submenuitem" href="">Sketches</a></div>
+            <div class="submenuitem">
+            <a class="submenuitem" href="">3D</a></div>
+            <div class="submenuitem active">
+            <a class="submenuitem active" href="">Photography</a></div>
+            <div class="submenuitem">
+            <a class="submenuitem" href="">Sketchjournals</a></div>
+            <div class="submenuitem">
+            <a class="submenuitem" href="">Misc</a></div>
+        </div -->
+        
+        {# Submenu #}
+        {% if page %}
+                
+            {# This template assumes menu items leading to submenus will
+                never link to a page outside of the submenu items. #}
+            {% if page.submenucat %}
+            
+            {% if page.menucat in SUBMENUITEMS %}
+            <div id="submenu">
+                {# Get submenu items from dictionary #}
+                
+                {% for title, link in SUBMENUITEMS[page.menucat] %}
+                    
+                    <div {% if title == page.submenucat %}class="submenuitem active"{% else %}class="submenuitem"{% endif %}>
+                        <a {% if title == page.submenucat %}class="submenuitem active"{% else %}class="submenuitem"{% endif %} href="{{ SITEURL }}/{{ link }}">{{ title }}</a></div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endif %}
+                
+        {% endif %}
+
+        <div id="main">
+            
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+
+        <div id="right">
+            
+            {% include 'sidebar.html' %}
+            
+        </div>
+        
+        <div id="footer">
+            <p>Footer (C) {{ AUTHOR }} 2014. Summit about Pelican</p>
+        </div>
+
+
+
+    </body>
+</html>

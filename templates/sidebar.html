@@ -1,0 +1,14 @@
+<h1 class="sidebar">See more of my things:</h1>
+
+{% for title, url, desc in PERSONAL_LINKS %}
+
+    <p class="sidebar"><a class="personal-links" href="{{ url }}">{{ title }}</a><p>
+    <p class="sidebar description">{{ desc }}</p>
+
+{% endfor %}
+
+<hr>
+{% include 'tags_sidebar.html' %}
+<p class="sidebar"><a class="personal-links" href="{{ SITEURL }}/archives">Article index</a><p>
+    
+<h1 class="sidebar">Links</h1>
