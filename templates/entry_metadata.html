@@ -1,7 +1,9 @@
 {# Entry metadata #}
     <div class="entry-metadata">
         {# Entry icon #}
-            <img class="entry-icon" src="{{ SITEURL }}{% if article.icon %}{{ article.icon }}{% else %}/theme/images/sundog120.png{% endif %}">
+        {% if article.icon %}
+            <img class="entry-icon" src="{{ SITEURL }}{{ article.icon }}">
+        {% endif %}
         
         {% if article.author %}
             <p class="entry-metadata">By: <a class="location-bar" href="{{ SITEURL }}/pages/contact">{{ article.author }}</a></p>
