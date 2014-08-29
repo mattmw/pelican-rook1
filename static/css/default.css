@@ -427,8 +427,7 @@ div.submenuitem.active
 
 div#main
 {
-    /* background-color: #555555; */
-    background: url('../images/card_bg_blur1_mottledpaper.png');
+    background: url('../images/card_bg_blur1_brightmottledpaper.png');
     float: left;
     margin-left: 20%;
     width: 60%;
@@ -606,4 +605,9 @@ span.lineno
 {
     color: darkgrey;
     font-style: italic;
+}
+
+iframe
+{
+    margin-left: 1.25rem;
 }
