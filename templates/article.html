@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block head %}
+    {% block title %}
+        {{ SITENAME }} - {{ article.title }}
+    {%endblock%}
   {{ super() }}
   {% for keyword in article.keywords %}
     <meta name="keywords" contents="{{keyword}}" />
@@ -16,7 +19,8 @@
 {% endblock %}
 
 {% block content %}
-
+    <!-- Next and previous articles -->
+    {% include 'article_navigation.html' %}
     {% include 'entry_metadata.html' %}
 
 <section id="content" class="body">    
@@ -32,5 +36,9 @@
   <div class="entry-content">
     {{ article.content }}
   </div><!-- /.entry-content -->
+  
+<!-- Next and previous articles -->
+{% include 'article_navigation.html' %}
+
 </section>
 {% endblock %}

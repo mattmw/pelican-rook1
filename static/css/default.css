@@ -111,6 +111,7 @@ h3
     font-weight: bold;
     font-style: normal;
     margin-left: 2.5rem;
+    clear: left;
 }
 
 hr
@@ -140,6 +141,28 @@ p.read-more
 {
     font-weight: bold;
     font-style: italic;
+}
+
+div#article-nav
+{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+p.article-nav
+{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 8pt;
+    margin-right: 0.75rem;
+    margin-left: 1.25rem;
+    margin-top: 0rem;
+    margin-bottom: 0.25rem;
+}
+
+p.article-nav.older
+{
+    text-align: right;
 }
 
 /*
@@ -218,6 +241,11 @@ p.sidebar
     color: grey;
 }
 
+ol
+{
+    clear: left;
+}
+
 h1.sidebar
 {
     font-size: 12pt;
@@ -228,6 +256,13 @@ p.sidebar.description
 {
     font-size: 8pt;
     margin-top: -0.75rem;
+}
+
+p.timestamp
+{
+    font-style: italic;
+    font-size: 8pt;
+    color: grey;
 }
 
 a.personal-links
@@ -610,4 +645,40 @@ span.lineno
 iframe
 {
     margin-left: 1.25rem;
+}
+
+table
+{
+    margin-left: 1.25rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.25rem;
+    /* border-collapse: collapse; */
+}
+
+td
+{
+    padding-right: 0.15rem;
+    padding-left: 0.15rem; 
+}
+
+th
+{
+    font-weight: bold;
+}
+
+dt
+{
+    margin: 0.75rem 0.75rem 0.75rem 1.25rem;
+    clear: left;
+    font-style: italic;
+}
+
+p.date-separator
+{
+    text-align: center;
+    font-size: 8pt;
+    color: lightgray;
+    margin: 0.15rem 1.25rem 0.15rem 1.25rem;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
 }

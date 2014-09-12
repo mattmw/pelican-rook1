@@ -1,0 +1,17 @@
+<!-- Next and previous articles -->
+{% set length = articles|length %}
+{% set slug = article.slug %}
+
+{% for new_article in articles %}
+    {% if article.slug == new_article.slug %}
+        {% set article_index = loop.index0 %}
+        <div id="article-nav">
+            {% if article_index-1 >= 0 %}
+                <p class="article-nav newer"><a href="{{ SITEURL }}/{{ articles[article_index-1].url }}">Newer: "{{articles[article_index-1].title[:]}}"</a></p>
+            {% endif %}
+            {% if article_index+1 < 83 %}
+                <p class="article-nav older"><a href="{{ SITEURL }}/{{ articles[article_index+1].url }}">Older: "{{articles[article_index+1].title[:]}}"</a></p>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endfor %}

@@ -12,3 +12,12 @@
 <p class="sidebar"><a class="personal-links" href="{{ SITEURL }}/archives">Article index</a><p>
     
 <h1 class="sidebar">Links</h1>
+
+<h1 class="sidebar">Nice Tools</h1>
+
+{% for title, url, desc in TOOL_LINKS %}
+
+    <p class="sidebar"><a class="personal-links" href="{{ url }}">{{ title }}</a><p>
+    <p class="sidebar description">{{ desc }}</p>
+
+{% endfor %}
