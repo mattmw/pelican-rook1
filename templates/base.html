@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Desc.">
-        <meta name="copyright" content="{{ AUTHOR }}">
         <meta name="author" content="{{ AUTHOR }}">
         
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}">
@@ -20,10 +19,10 @@
         <div id="left">
             <div id="siteicon">
                 <div>
-                    <img id="logo" src="{{ SITEURL }}/images/theme/logo.png">
+                    <img id="logo" src="{{ SITEURL }}/images/theme/logo.png" alt="Rook1">
                 </div>
                 <div>
-                    <img id="mascothead" src="{{ SITEURL }}/images/theme/mascot.png">
+                    <img id="mascothead" src="{{ SITEURL }}/images/theme/mascot.png" alt="Raymond">
                 </div>
             </div>
         
@@ -31,7 +30,7 @@
             {% for title, url, img in POSTERS %}
             
                 <a href="{{ url }}">
-                    <img class="poster" src="{{ SITEURL }}/{{ img }}">
+                    <img class="poster" src="{{ SITEURL }}/{{ img }}" alt="{{ title }}">
                 </a>
             
             {% endfor %}

@@ -143,7 +143,7 @@ p.read-more
     font-style: italic;
 }
 
-div#article-nav
+div.article-nav
 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
@@ -222,6 +222,12 @@ li
 {
     margin-top: 0.25rem;
     margin-right: 0.75rem;
+}
+
+ol.sidebar
+{
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
 }
 
 li.sidebar

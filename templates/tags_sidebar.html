@@ -1,7 +1,8 @@
 <h1 class="sidebar">Blog tags</h1>
-
+<ol class="sidebar">
 {%- for tag, articles in tags|sort %}
     
     <li class="sidebar"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
     
 {% endfor %}
+</ol>

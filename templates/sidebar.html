@@ -21,13 +21,13 @@
 
     {% if title.type == 'banner' %}
         <a href="{{ url }}">
-        <img class="sidebar-banner" src="{{ SITEURL }}/{{ title.url }}">
+        <img class="sidebar-banner" src="{{ SITEURL }}/{{ title.url }}" alt="{{ title.text }}">
         </a>
         <p class="sidebar description">{{ desc }}</p>
     {% elif title.type == 'icon' %}
         <p class="sidebar">
             <a href="{{ url }}">
-            <img class="sidebar-icon" src="{{ SITEURL }}/{{ title.url }}">
+            <img class="sidebar-icon" src="{{ SITEURL }}/{{ title.url }}" alt="{{ title.text }}">
             </a>
             <a class="personal-links" href="{{ url }}">{{ title.text }}</a>
         </p>
