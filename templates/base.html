@@ -26,7 +26,18 @@
                     <img id="mascothead" src="{{ SITEURL }}/images/theme/mascot.png">
                 </div>
             </div>
+        
+            <div id="posters">
+            {% for title, url, img in POSTERS %}
+            
+                <a href="{{ url }}">
+                    <img class="poster" src="{{ SITEURL }}/{{ img }}">
+                </a>
+            
+            {% endfor %}
             </div>
+        
+        </div>
 
         <div id="header">
             <div id="nameplate">

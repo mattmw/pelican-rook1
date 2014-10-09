@@ -2,22 +2,41 @@
 
 {% for title, url, desc in PERSONAL_LINKS %}
 
-    <p class="sidebar"><a class="personal-links" href="{{ url }}">{{ title }}</a><p>
+    <p class="sidebar">
+        <a class="personal-links" href="{{ url }}">{{ title }}</a>
+    </p>
     <p class="sidebar description">{{ desc }}</p>
 
 {% endfor %}
 
 <hr>
 {% include 'tags_sidebar.html' %}
-<p class="sidebar"><a class="personal-links" href="{{ SITEURL }}/archives">Article index</a><p>
-    
+<p class="sidebar"><a class="personal-links" href="{{ SITEURL }}/archives.html">Index of articles</a></p>
+<hr>
 <h1 class="sidebar">Links</h1>
-
+<hr>
 <h1 class="sidebar">Nice Tools</h1>
 
 {% for title, url, desc in TOOL_LINKS %}
 
-    <p class="sidebar"><a class="personal-links" href="{{ url }}">{{ title }}</a><p>
+    {% if title.type == 'banner' %}
+        <a href="{{ url }}">
+        <img class="sidebar-banner" src="{{ SITEURL }}/{{ title.url }}">
+        </a>
+        <p class="sidebar description">{{ desc }}</p>
+    {% elif title.type == 'icon' %}
+        <p class="sidebar">
+            <a href="{{ url }}">
+            <img class="sidebar-icon" src="{{ SITEURL }}/{{ title.url }}">
+            </a>
+            <a class="personal-links" href="{{ url }}">{{ title.text }}</a>
+        </p>
+        <p class="sidebar description">{{ desc }}</p>
+    {% elif title.type == 'text' %}
+    <p class="sidebar">
+        <a class="personal-links" href="{{ url }}">{{ title.text }}</a>
+    </p>
     <p class="sidebar description">{{ desc }}</p>
+    {% endif %}
 
 {% endfor %}

@@ -218,6 +218,12 @@ p.entry-metadata
     text-align: right;
 }
 
+li
+{
+    margin-top: 0.25rem;
+    margin-right: 0.75rem;
+}
+
 li.sidebar
 {
     list-style-type: none;
@@ -238,6 +244,8 @@ p.sidebar
 {
     /* margin-left: 1.15rem; */
     margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.5rem;
     color: grey;
 }
 
@@ -255,7 +263,8 @@ h1.sidebar
 p.sidebar.description
 {
     font-size: 8pt;
-    margin-top: -0.75rem;
+    /* margin-top: -0.75rem; */
+    margin-top: 0rem;
 }
 
 p.timestamp
@@ -687,4 +696,19 @@ p.date-separator
     margin: 0.15rem 1.25rem 0.15rem 1.25rem;
     font-weight: bold;
     border-bottom: 1px solid lightgray;
+}
+
+img.sidebar-banner
+{
+}
+
+img.sidebar-icon
+{
+    vertical-align: middle;
+}
+
+div#posters
+{
+    margin-top: 1.0rem;
+    text-align: center;
 }
